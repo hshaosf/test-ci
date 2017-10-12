@@ -1,0 +1,7 @@
+name: lunch-map
+recipe: pantheon
+config:
+  framework: drupal8
+  env: dev
+  site: lunch-map
+  id: 36b3a1e0-750a-447b-94fe-cf6de8bb1f24

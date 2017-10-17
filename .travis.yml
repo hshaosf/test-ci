@@ -9,6 +9,9 @@ before_deploy:
 - openssl aes-256-cbc -K $encrypted_e9bba95f5f6f_key -iv $encrypted_e9bba95f5f6f_iv
   -in scripts-ci/test-ci.enc -out $HOME/.ssh/id_rsa -d
 - chmod 0600 $HOME/.ssh/id_rsa
+- openssl aes-256-cbc -K $encrypted_1655b4514240_key -iv $encrypted_1655b4514240_iv
+  -in host.enc -out $HOME/.ssh/host -d
+- cat $HOME/.ssh/host >> $HOME/.ssh/known_hosts
 deploy:
 - provider: script
   script: scripts-ci/code-sync.sh
@@ -17,3 +20,4 @@ deploy:
 env:
   global:
   - secure: mp3ZIRdce9fSPh1ywePimJ+3d/QlpGTz1PIPCXhIK++S2q58shD5jypF5GCDaKitTUnptesGI8+Rv5zpI76oN1uT5qDtMpmsXYxPrVCgKdwgHEkyzQEsPfoWWRWp2ygOMJf0V3ZmDhwV4pm07Lxc+5bggZR8kn8tjrNC2IRA5g/3HppupSjBerjnZKYZJRYgQwRL9bzxWQRauaCUes2zxRND7GpFfPj9psHHpe1b5X7xRSh+EWltO5FJ+/TGKTy3VM54OSBArsqTwbgTQvKn01/okittBNcrn1Bew3+5lD01gvJgO9BkqrPJA6oloFBE4waUJQjJYaPyfO5XILJ/fF8fnw/uumwX/w/iDYiSaCHeYWo2HQZnL3u0LT5lr6RmRzoygVgGyFybEHpuk8onXPS3C1+nh4NqdgFdoiQrXXUPVcV8SFWTYkD6s7XqkFduuEclYP7vPZKxUlKzCNtWyt/qoeY/OsJ1ZD5I5x6TKMEV8P+GKtWUqXAlQqU00Tm7/5FppuqMesR8ULuexrQ09h+T0/Cg5rKSXaZ4xccbUYPQPjm78MeShbIYORCdgsDfjob+Y+ZbSCJuDBQP+xEGQXaMFngGu+vntjFLjfmWVi0cOpZXFCf2xRMGKh152OEG90JqHNx2xQiyLeH5JtzdwPvYh5262dUv6C4Pjj0cmhw=
+

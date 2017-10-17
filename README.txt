@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/hshaosf/test-ci.svg?branch=master)](https://travis-ci.org/hshaosf/test-ci)
 
 CONTENTS OF THIS FILE
 ---------------------

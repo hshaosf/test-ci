@@ -10,7 +10,7 @@ before_deploy:
   -in scripts-ci/test-ci.enc -out $HOME/.ssh/id_rsa -d
 - chmod 0600 $HOME/.ssh/id_rsa
 - openssl aes-256-cbc -K $encrypted_1655b4514240_key -iv $encrypted_1655b4514240_iv
-  -in host.enc -out $HOME/.ssh/host -d
+  -in scripts-ci/host.enc -out $HOME/.ssh/host -d
 - cat $HOME/.ssh/host >> $HOME/.ssh/known_hosts
 deploy:
 - provider: script

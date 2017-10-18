@@ -19,12 +19,11 @@ deploy:
     branch: master
 after_deploy:
 - composer global require "hirak/prestissimo:^0.3"
-- /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer --working-dir=$HOME require pantheon-systems/terminus
-  "<0.13.0"
+- /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer --working-dir=$HOME require pantheon-systems/terminus:1.x
 - "/usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer --working-dir=$HOME require drush/drush:8.*"
 - composer install
 - terminus auth login --machine-token=$TERMINUS_TOKEN
-- terminus drush:aliases
+- terminus aliases
 - drush $PANTHEON_SITE_ENV cr
 env:
   global:

@@ -24,7 +24,7 @@ after_deploy:
 - "/usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer --working-dir=$HOME require drush/drush:8.*"
 - composer install
 - terminus auth login --machine-token=$TERMINUS_TOKEN
-- terminus aliases
+- terminus drush:aliases
 - drush $PANTHEON_SITE_ENV cr
 env:
   global:
